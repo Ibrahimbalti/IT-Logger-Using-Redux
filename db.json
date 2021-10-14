@@ -1,0 +1,47 @@
+{
+  "log": [
+    {
+      "id": 1,
+      "message": "created a home page",
+      "attention": false,
+      "date": "10-14-2021",
+      "developer": "ibrahim"
+    },
+    {
+      "id": 2,
+      "message": "created a about page",
+      "attention": false,
+      "date": "10-18-2021",
+      "developer": "Ishaq"
+    },
+    {
+      "id": 3,
+      "message": "created a Navebar page",
+      "attention": false,
+      "date": "10-19-2021",
+      "developer": "ismail"
+    }
+  ],
+  "developer": [
+    {
+      "id": 1,
+      "firstname": "Muhammad",
+      "lastname": "Ibrahim"
+    },
+    {
+      "id": 2,
+      "firstname": "Muhammad",
+      "lastname": "Ishaq"
+    },
+    {
+      "id": 3,
+      "firstname": "Muhammad",
+      "lastname": "raziwan"
+    },
+    {
+      "firstname": "Muhammad",
+      "lastname": "Ismail zeem",
+      "id": 4
+    }
+  ]
+}
