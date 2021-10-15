@@ -1,5 +1,5 @@
 {
-  "log": [
+  "logs": [
     {
       "id": 1,
       "message": "created a home page",
@@ -39,9 +39,10 @@
       "lastname": "raziwan"
     },
     {
+      "id": 4,
       "firstname": "Muhammad",
-      "lastname": "Ismail zeem",
-      "id": 4
+      "lastname": "Ismail zeem"
+      
     }
   ]
 }
