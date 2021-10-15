@@ -1,7 +1,21 @@
+import React,{  Fragment, useEffect} from 'react'
 import './App.css';
+import SearchBar from './components/layout/SearchBar'
+import 'materialize-css/dist/css/materialize.min.css';
+import M from 'materialize-css/dist/js/materialize.min.js';
+
+
 
 function App() {
-  return <div className="App">Home</div>;
+  useEffect(()=>{
+    //initailize Materialize js
+    M.AutoInit();
+  })
+  return (
+    <Fragment>
+    <SearchBar/>
+    </Fragment>
+  )
 }
 
 export default App;
