@@ -10,7 +10,7 @@
     {
       "id": 2,
       "message": "created a about page",
-      "attention": false,
+      "attention": true,
       "date": "10-18-2021",
       "developer": "Ishaq"
     },
@@ -42,7 +42,6 @@
       "id": 4,
       "firstname": "Muhammad",
       "lastname": "Ismail zeem"
-      
     }
   ]
 }
