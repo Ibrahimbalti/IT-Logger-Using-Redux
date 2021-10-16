@@ -5,8 +5,6 @@ const Logs = () => {
   const [logs, setLogs] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  console.log(logs);
-
   useEffect(() => {
     getLog();
   }, []);
