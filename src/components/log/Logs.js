@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import LogItems from './LogItems';
+import Preloader from '../layout/Preloader';
 const Logs = () => {
   const [logs, setLogs] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -17,6 +18,10 @@ const Logs = () => {
     setLogs(data);
     setLoading(false);
   };
+
+  if (loading) {
+    <Preloader />;
+  }
   return (
     <ul className="collection with-header">
       <li className="collection-header">
