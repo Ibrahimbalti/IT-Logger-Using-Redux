@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import LogItems from './LogItems';
 import Preloader from '../layout/Preloader';
 const Logs = () => {
-  const [logs, setLogs] = useState([]);
+  const [log, setLogs] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -11,7 +11,8 @@ const Logs = () => {
 
   const getLog = async () => {
     setLoading(true);
-    const res = await fetch('/logs');
+    const res = await fetch('log');
+    console.log(res);
     const data = await res.json();
     setLogs(data);
     setLoading(false);
@@ -25,10 +26,10 @@ const Logs = () => {
       <li className="collection-header">
         <h4 className="center">Developer Logs</h4>
       </li>
-      {!loading && logs.length === 0 ? (
+      {!loading && log.length === 0 ? (
         <p className="center">There are currently no developer logs</p>
       ) : (
-        logs.map((log) => <LogItems key={log.id} log={log} />)
+        log.map((log) => <LogItems key={log.id} log={log} />)
       )}
     </ul>
   );

@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 import './App.css';
 import SearchBar from './components/layout/SearchBar';
 import AddLogModal from './components/log/AddLogModal';
+import EditLogModal from './components/log/EditLogModal';
 import Logs from './components/log/Logs';
 import AddBtn from './components/layout/AddBtn';
 import 'materialize-css/dist/css/materialize.min.css';
@@ -19,6 +20,7 @@ function App() {
       <div className="container">
         <AddBtn />
         <AddLogModal />
+        <EditLogModal />
         <Logs />
       </div>
     </Fragment>
