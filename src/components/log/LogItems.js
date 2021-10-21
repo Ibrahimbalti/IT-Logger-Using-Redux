@@ -21,7 +21,7 @@ const LogItems = ({ log }) => {
           <Moment format=" MMMM Do YYYY, h:mm:ss a">{log.date}</Moment>
         </span>
         {/* secondary-content to left side pa lya jayta ha */}
-        <a href="#" className="secondary-content">
+        <a href="#!" className="secondary-content">
           <i className="material-icons grey-text">delete</i>
         </a>
       </div>

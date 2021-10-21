@@ -4,6 +4,7 @@ import SearchBar from './components/layout/SearchBar';
 import AddLogModal from './components/log/AddLogModal';
 import EditLogModal from './components/log/EditLogModal';
 import AddDeveloperModal from './components/developers/AddDeveloperModal';
+import DeveloperListModal from './components/developers/DeveloperListModal';
 import Logs from './components/log/Logs';
 import AddBtn from './components/layout/AddBtn';
 import 'materialize-css/dist/css/materialize.min.css';
@@ -24,6 +25,7 @@ function App() {
         <EditLogModal />
         <AddDeveloperModal />
         <Logs />
+        <DeveloperListModal />
       </div>
     </Fragment>
   );
