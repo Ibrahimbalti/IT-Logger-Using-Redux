@@ -10,24 +10,29 @@ import AddBtn from './components/layout/AddBtn';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
 
+import { Provider } from 'react-redux';
+import store from './store';
+
 function App() {
   useEffect(() => {
     //initailize Materialize js
     M.AutoInit();
   });
   return (
-    <Fragment>
-      <SearchBar />
+    <Provider store={store}>
+      <Fragment>
+        <SearchBar />
 
-      <div className="container">
-        <AddBtn />
-        <AddLogModal />
-        <EditLogModal />
-        <AddDeveloperModal />
-        <Logs />
-        <DeveloperListModal />
-      </div>
-    </Fragment>
+        <div className="container">
+          <AddBtn />
+          <AddLogModal />
+          <EditLogModal />
+          <AddDeveloperModal />
+          <Logs />
+          <DeveloperListModal />
+        </div>
+      </Fragment>
+    </Provider>
   );
 }
 
