@@ -7,7 +7,7 @@ const initailState = {
   error: null,
 };
 
-export default (state = initailState, action) => {
+const logReducers = (state = initailState, action) => {
   switch (action.type) {
     case GET_LOG:
       return {
@@ -27,6 +27,10 @@ export default (state = initailState, action) => {
         error: action.payload,
       };
     default:
-      return state;
+      return {
+        ...state,
+      };
   }
 };
+
+export default logReducers;
