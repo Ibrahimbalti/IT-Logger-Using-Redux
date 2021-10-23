@@ -1,17 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import M from 'materialize-css/dist/js/materialize.min.js';
 import M from 'materialize-css/dist/js/materialize.min.js';
-
-const EditLogModal = () => {
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { updateLog } from '../../action/logAction';
+const EditLogModal = ({ current, updateLog }) => {
   const [message, setMessage] = useState('');
   const [developer, setDevelpoer] = useState('');
   const [attention, setAttention] = useState('');
+
+  useEffect(() => {
+    if (current) {
+      setMessage(current.message);
+      setDevelpoer(current.developer);
+      setAttention(current.attention);
+    }
+  }, [current]);
 
   const onSubmit = () => {
     if (message === '' || developer === '') {
       M.toast({ html: 'Please fill the message and developer fields' });
     } else {
-      console.log(message, developer, attention);
+      const updateLogs = {
+        id: current.id,
+        message,
+        developer,
+        attention,
+        date: new Date(),
+      };
+
+      updateLog(updateLogs);
+      M.toast({ html: 'Log update' });
       setMessage('');
       setDevelpoer('');
       setAttention(false);
@@ -82,4 +101,13 @@ const EditLogModal = () => {
   );
 };
 
-export default EditLogModal;
+EditLogModal.propTypes = {
+  current: PropTypes.object,
+  updateLog: PropTypes.func.isRequired,
+};
+
+const maStateToProps = (state) => ({
+  current: state.log.current,
+});
+
+export default connect(maStateToProps, { updateLog })(EditLogModal);

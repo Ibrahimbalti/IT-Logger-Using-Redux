@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
 import { connect } from 'react-redux';
-import { deleteLog } from '../../action/logAction';
+import { deleteLog, setCurrent } from '../../action/logAction';
 import M from 'materialize-css/dist/js/materialize.min.js';
-const LogItems = ({ log, deleteLog }) => {
+const LogItems = ({ log, deleteLog, setCurrent }) => {
   const onDelete = () => {
     deleteLog(log.id);
     M.toast({ html: 'Log Delete' });
@@ -15,6 +15,7 @@ const LogItems = ({ log, deleteLog }) => {
         {/* edit log modal is id to open new page and modal-trigger to use to open the modal like edit log modal */}
         <a
           href="#edit-log-modal"
+          onClick={() => setCurrent(log)}
           className={`modal-trigger ${
             log.attention ? 'red-text' : 'blue-text'
           }`}
@@ -38,6 +39,7 @@ const LogItems = ({ log, deleteLog }) => {
 LogItems.propTypes = {
   log: PropTypes.object.isRequired,
   deleteLog: PropTypes.func.isRequired,
+  setCurrent: PropTypes.func.isRequired,
 };
 
-export default connect(null, { deleteLog })(LogItems);
+export default connect(null, { deleteLog, setCurrent })(LogItems);
