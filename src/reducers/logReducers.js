@@ -7,6 +7,7 @@ import {
   SET_CURRENT,
   CLEAR_CURRENT,
   UPDATE_LOG,
+  SEARCH_LOG,
 } from '../action/type';
 
 const initailState = {
@@ -62,7 +63,11 @@ const logReducers = (state = initailState, action) => {
         ...state,
         current: null,
       };
-
+    case SEARCH_LOG:
+      return {
+        ...state,
+        logs: action.payload,
+      };
     case LOG_ERROR:
       return {
         ...state,

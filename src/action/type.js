@@ -6,6 +6,7 @@ export const CLEAR_CURRENT = 'CLEAR_CURRENT';
 export const UPDATE_LOG = 'UPDATE_LOG';
 export const LOG_ERROR = 'LOG_ERROR';
 export const SET_LOADING = 'SET_LOADING';
+export const SEARCH_LOG = 'SEARCH_LOG';
 export const GET_DEVELOPER = 'GET_DEVELOPER';
 export const ADD_DEVELOPER = 'ADD_DEVELOPER';
 export const DELETE_DEVELOPER = 'DELETE_DEVELOPER';
