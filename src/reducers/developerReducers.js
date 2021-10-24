@@ -1,4 +1,9 @@
-import { GET_DEVELOPER, SET_LOADING, DEVELOPER_ERROR } from '../action/type';
+import {
+  GET_DEVELOPER,
+  SET_LOADING,
+  DEVELOPER_ERROR,
+  ADD_DEVELOPER,
+} from '../action/type';
 
 const initailState = {
   developer: null,
@@ -12,6 +17,12 @@ const developerReducer = (state = initailState, action) => {
       return {
         ...state,
         developer: action.payload,
+        loading: false,
+      };
+
+    case ADD_DEVELOPER:
+      return {
+        developer: [...state.developer, action.payload],
         loading: false,
       };
     case SET_LOADING:

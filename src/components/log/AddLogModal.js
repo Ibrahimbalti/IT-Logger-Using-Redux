@@ -20,7 +20,7 @@ const AddLogModal = ({ addLog }) => {
         developer,
         date: new Date(),
       };
-      console.log('Check it bro', newLog);
+      // console.log('Check it bro', newLog);
       addLog(newLog);
       M.toast({ html: 'Log add successfully' });
       setMessage('');

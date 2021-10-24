@@ -43,7 +43,7 @@ const DeveloperListModal = ({
               )} */}
 
           {!loading && developer === null ? (
-            <p className="center">There are currently no developer logs</p>
+            <p className="center">There are currently no developer </p>
           ) : (
             developer.map((developer) => (
               <DeveloperItem key={developer.id} developer={developer} />
