@@ -3,6 +3,7 @@ import {
   SET_LOADING,
   DEVELOPER_ERROR,
   ADD_DEVELOPER,
+  DELETE_DEVELOPER,
 } from './type';
 
 export const getDeveloper = () => async (dispatch) => {
@@ -41,6 +42,25 @@ export const addDeveloper = (developer) => async (dispatch) => {
     dispatch({
       type: ADD_DEVELOPER,
       payload: data,
+    });
+  } catch (err) {
+    dispatch({
+      type: DEVELOPER_ERROR,
+      payload: err.response.data,
+    });
+  }
+};
+
+export const deleteDeveloper = (id) => async (dispatch) => {
+  try {
+    setLoading();
+    await fetch(`developer/${id}`, {
+      method: 'DELETE',
+    });
+
+    dispatch({
+      type: DELETE_DEVELOPER,
+      payload: id,
     });
   } catch (err) {
     dispatch({

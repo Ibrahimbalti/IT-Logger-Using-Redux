@@ -3,6 +3,7 @@ import {
   SET_LOADING,
   DEVELOPER_ERROR,
   ADD_DEVELOPER,
+  DELETE_DEVELOPER,
 } from '../action/type';
 
 const initailState = {
@@ -35,6 +36,15 @@ const developerReducer = (state = initailState, action) => {
       return {
         ...state,
         error: action.payload,
+      };
+
+    case DELETE_DEVELOPER:
+      return {
+        ...state,
+        developer: state.developer.filter(
+          (developer) => developer.id !== action.payload
+        ),
+        loading: false,
       };
     default:
       return {
